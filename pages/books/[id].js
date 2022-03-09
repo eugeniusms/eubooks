@@ -15,15 +15,15 @@ export const getStaticPaths = async () => {
     }
 }
 
-export const getStaticProps = async (context) => {
-    const id = context.params.id;
-
-    const res = await fetch('https://www.googleapis.com/books/v1/volumes?q=' + id.toString())
-    const data = await res.json();
-
-    return {
-        props: { todo: data["items"]}
-    }
+export async function getStaticProps({ params }) {
+    console.log(params)
+    // params contains the post `id`.
+    // If the route is like /posts/1, then params.id is 1
+    const res = await fetch(`https://www.googleapis.com/books/v1/volumes?q=${params.id}`)
+    const post = await res.json()
+  
+    // Pass post data to the page via props
+    return { props: { post } }
 }
 
 const Details = ({ todo }) => {

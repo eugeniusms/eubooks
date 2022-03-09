@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
+import GetData from './GetData';
 
 const Search = () => {
 
@@ -11,8 +12,10 @@ const Search = () => {
     setInterval(() => {
         const buttonInput = document.querySelector('#searchButton')
         buttonInput.addEventListener('click', function() {
-        const isiInput = document.querySelector('#searchBook')
-        router.push('/books/' +isiInput.value)
+            const isiInput = document.querySelector('#searchBook')
+            // router.push('/books/' +isiInput.value)
+            // router.push('https://www.googleapis.com/books/v1/volumes?q=' + isiInput.value)
+            GetData('https://www.googleapis.com/books/v1/volumes?q='+isiInput.value)
         })
     }, 1000)
 
