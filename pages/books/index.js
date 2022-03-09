@@ -1,29 +1,27 @@
-// import React, {useState, useEffect} from 'react'
-// import axios from 'axios'
+// import Link from 'next/link';
 
-// function DataFetching() {
-//     const [books, setPosts] = useState([])
+// export const getStaticProps = async () => {
 
-//     useEffect(() => {
-//         axios.get('https://www.googleapis.com/books/v1/volumes?q=python')
-//             .then(res => {
-//                 console.log(res)
-//                 setPosts(res.data["items"])
-//             })
-//             .catch(err => {
-//                 console.log(err)
-//             })
-//     })    
+//     const res = await fetch('https://www.googleapis.com/books/v1/volumes?q=python&&maxResults=25')
+//     const data = await res.json();
 
-//     return (
-//         <div>
-//             <ul>
-//                 {
-//                     books.map(book => <li key={book.id}><b>{book.volumeInfo["title"]}</b></li>)
-//                 }
-//             </ul>
-//         </div>
-//     )
+//     return {
+//         props: { books: data["items"] }
+//     }
+
 // }
 
-// export default DataFetching;
+// const Book = ({ books }) => {
+//     return (
+//         <div>
+//             <h1>All ToDo</h1>
+//             {books.map(todo => (
+//                 <Link href={'/book/' + book.id} key={book.id}>
+//                     <h3>{ book.volumeInfo["title"] }</h3>
+//                 </Link>
+//             ))}
+//         </div>
+//     );
+// }
+ 
+// export default Book;

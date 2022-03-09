@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import axios from 'axios'
 
 function DataFetching() {
-   
+
     const [books, setPosts] = useState([])
 
     useEffect(() => {
@@ -22,11 +22,11 @@ function DataFetching() {
                 {
                     books.map(book => 
                         <li key={book.id}>
-                            <b>{book.volumeInfo["title"]}</b>
-                            <p>{book.volumeInfo["subtitle"]}</p>
-                            <img src={book.volumeInfo["imageLinks"].thumbnail} />
-                            <p>Author : {book.volumeInfo["authors"]}</p>
-                            <hr />
+                                <b>{book.volumeInfo["title"]}</b>
+                                <p>{book.volumeInfo["subtitle"]}</p>
+                                <img src={book.volumeInfo["imageLinks"].thumbnail} />
+                                <p>Author : {book.volumeInfo["authors"]}</p>
+                                <hr />
                         </li>
                         )
                 }
