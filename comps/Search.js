@@ -12,7 +12,7 @@ const Search = () => {
         const buttonInput = document.querySelector('#searchButton')
         buttonInput.addEventListener('click', function() {
         const isiInput = document.querySelector('#searchBook')
-        router.push('/' + isiInput.value)
+        router.push('/books/' +isiInput.value)
         })
     }, 1000)
 
@@ -73,7 +73,7 @@ function tryAja() {
     linkNi.href = 'https://www.googleapis.com/books/v1/volumes?q=' + isiInput.value
 
     const coba = document.createElement('p')
-    coba.innerText = "KLIK"
+    coba.innerText = 'https://www.googleapis.com/books/v1/volumes?q=' + isiInput.value
 
     const all = document.querySelector('#meng')
     
