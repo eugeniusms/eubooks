@@ -1,7 +1,8 @@
+import React from 'react';
 import Image from 'next/image'
 import Link from 'next/link'
 
-const Navbar = () => {
+const Search = () => {
     return (
         <nav class="flex py-3 px-5 text-gray-700 bg-gray-50 border border-gray-200 dark:bg-gray-800 dark:border-gray-700" aria-label="Breadcrumb">
         <link href="/dist/output.css" rel="stylesheet"></link>
@@ -16,12 +17,12 @@ const Navbar = () => {
                     
                     <div class="container flex flex-wrap justify-between items-center mx-auto">
                         <div class="flex md:order-2">
-                            <button type="button" class="inline-flex text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+                            <button type="button" class="inline-flex text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2" onClick={tryAja}>
                                 Search  
                             </button>
                         </div>
                         <div class="hidden justify-between items-center w-full md:flex md:w-auto md:order-1" id="mobile-menu-4">
-                            <input type="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Pemrograman Python 3" required />
+                            <input type="text" id="searchBook" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Pemrograman Python 3" required />
                         </div>
                     </div>
 
@@ -42,8 +43,29 @@ const Navbar = () => {
                     </Link>
                 </div>
             </div>
+
+            <div id="meng">
+            </div>
+
         </nav>
     );
 }
  
-export default Navbar;
+function tryAja() {
+    console.log("SUCCESS")
+
+    const isiInput = document.querySelector('#searchBook')
+
+    const linkNi = document.createElement('a')
+    linkNi.href = 'https://www.googleapis.com/books/v1/volumes?q=' + isiInput.value
+
+    const coba = document.createElement('p')
+    coba.innerText = "KLIK"
+
+    const all = document.querySelector('#meng')
+    
+    linkNi.append(coba)
+    all.append(linkNi)
+}
+  
+export default Search;

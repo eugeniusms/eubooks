@@ -6,6 +6,10 @@ import Footer from '../comps/Footer'
 export default function Home() {
   return (
     <div>
+      <Head>
+            <title>Eubooks | Home</title>
+            <meta name="keywords" content="book"/>  
+      </Head>
       <link href="/dist/output.css" rel="stylesheet"></link>
 
       <h1 className="text-3xl font-bold underline">Homepage</h1>
