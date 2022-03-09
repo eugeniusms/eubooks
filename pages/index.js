@@ -7,8 +7,8 @@ export default function Home() {
   return (
     <div>
       <link href="/dist/output.css" rel="stylesheet"></link>
-      <h1 className="text-3xl font-bold underline">Homepage</h1>
 
+      <h1 className="text-3xl font-bold underline">Homepage</h1>
       <p>Lorem Ipsum</p>
       <Link href="/books">
         <a>See Book Listing</a>
