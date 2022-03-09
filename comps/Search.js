@@ -67,5 +67,5 @@ function tryAja() {
     linkNi.append(coba)
     all.append(linkNi)
 }
-  
+
 export default Search;

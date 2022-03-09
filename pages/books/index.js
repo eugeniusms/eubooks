@@ -1,28 +1,29 @@
-import styles from '../../styles/Home.module.css'
+// import React, {useState, useEffect} from 'react'
+// import axios from 'axios'
 
-export const getStaticProps = async () => {
+// function DataFetching() {
+//     const [books, setPosts] = useState([])
 
-    const res = await fetch('https://jsonplaceholder.typicode.com/comments')
-    const data = await res.json();
+//     useEffect(() => {
+//         axios.get('https://www.googleapis.com/books/v1/volumes?q=python')
+//             .then(res => {
+//                 console.log(res)
+//                 setPosts(res.data["items"])
+//             })
+//             .catch(err => {
+//                 console.log(err)
+//             })
+//     })    
 
-    return {
-        props: { books: data}
-    }
-}
+//     return (
+//         <div>
+//             <ul>
+//                 {
+//                     books.map(book => <li key={book.id}><b>{book.volumeInfo["title"]}</b></li>)
+//                 }
+//             </ul>
+//         </div>
+//     )
+// }
 
-const Books = ({ books }) => {
-    return (
-        <div>
-            <h1>All Books</h1>
-            {books.map(book => (
-                <div key={book.id}>
-                    <a className={styles.single}>
-                        <h3>{ book.name }</h3>
-                    </a>
-                </div>
-            ))}
-        </div>
-    );
-}
-
-export default Books;
+// export default DataFetching;
