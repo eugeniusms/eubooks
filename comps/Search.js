@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import GetData from './GetData';
+// import DataFetching from './DataFetching';
 
 const Search = () => {
 
@@ -16,6 +17,7 @@ const Search = () => {
             // router.push('/books/' +isiInput.value)
             // router.push('https://www.googleapis.com/books/v1/volumes?q=' + isiInput.value)
             GetData('https://www.googleapis.com/books/v1/volumes?q='+isiInput.value)
+            // DataFetching('https://www.googleapis.com/books/v1/volumes?q='+isiInput.value)
         })
     }, 1000)
 
