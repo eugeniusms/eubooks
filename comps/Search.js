@@ -85,7 +85,7 @@ function tryAja() {
     linkNi.append(coba)
     all.append(linkNi)
 
-    GetData('https://www.googleapis.com/books/v1/volumes?q='+isiInput.value)
+    GetData('https://www.googleapis.com/books/v1/volumes?q='+isiInput.value + '&&maxResults=25')
 }
 
 export default Search;
