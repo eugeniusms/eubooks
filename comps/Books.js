@@ -24,12 +24,12 @@ function printHTML(data) {
             divLapis1.id = "printList"
             // divlapis2
             const divLapis2 = document.createElement('div')
-            divLapis2.className = "w-full bg-white rounded-3xl shadow border p-6 w-64"
+            divLapis2.className = "w-full bg-white rounded-3xl shadow border p-6 w-64 hover:ease-in duration-300 hover:scale-110"
             divLapis2.id = "printList"
             // gambar
             const imageBook = document.createElement('img')
             imageBook.alt = "gallery"
-            imageBook.className = "block m-auto object-cover object-center w-30px h-30px rounded-lg"
+            imageBook.className = "block m-auto object-cover object-center w-30px h-30px rounded-lg hover:ease-in duration-300 hover:scale-110"
             imageBook.id = "printList"
             imageBook.src = data[i].volumeInfo["imageLinks"].thumbnail
             // judul
@@ -55,7 +55,6 @@ function printHTML(data) {
 
             divLapis1.append(divLapis2)
 
-
             const fusion = document.createElement('div')
             fusion.id = "printList"
             fusion.className = "p-8 rounded-3xl flex flex-wrap w-1/5"
@@ -73,6 +72,7 @@ function printHTML(data) {
 
 // select semua button
 setInterval(() => {
+    // usefusion
     const allButton = document.querySelectorAll('button')
     for (let buton of allButton) {
         if (buton.id == "printList") {
