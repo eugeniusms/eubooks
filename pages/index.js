@@ -91,12 +91,18 @@ export default function Home() {
 
       <h1 className="text-3xl font-bold underline">Homepage</h1>
       <p>Lorem Ipsum</p>
-      <div class="p-8 bg-white rounded-3xl shadow border p-6 w-64">
+      <div class="p-8 bg-white rounded-3xl shadow border p-6 w-64 box-decoration-slice bg-gradient-to-r from-indigo-600 to-pink-500 text-white px-2">
         <p class="py-8 text-sm text-center font-bold text-purple-700 text-opacity-75">The quick brown fox ...</p>
         <p class="font-mono text-sky-400">APA INI FONT</p>
       </div>
       <button class="block m-auto text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
         coba
+      </button>
+      <button class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+        coba2
+      </button>
+      <button class="py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+        coba3
       </button>
 
       <Link href="/books">
