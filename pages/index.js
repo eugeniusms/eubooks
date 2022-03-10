@@ -130,7 +130,7 @@ export default function Home() {
         </ul>
       </div>  
 
-      <div class="flex justify-end">
+      <div class="flex justify-end bg-gradient-to-r from-indigo-500">
         <div>01</div>
         <div>02</div>
         <div>03</div>
