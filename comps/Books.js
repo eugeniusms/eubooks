@@ -1,3 +1,6 @@
+import { getStaticProps } from "../pages/books/[id]"
+import Details from "../pages/books"
+
 const Books = (data) => {
     printHTML(data)
 }
@@ -5,20 +8,13 @@ const Books = (data) => {
 function printHTML(data) {
     console.log(data)
 
+    // just show only one
     const allList = document.querySelectorAll('#printList')
     for (let list of allList) {
         list.remove()
     }
 
     const getDiv = document.querySelector("#akuSuka")
-
-    // <div class="flex flex-wrap w-1/5">
-    //     <div class="w-full p-1 md:p-2">
-    //         <img alt="gallery" class="block object-cover object-center w-50px h-50px rounded-lg"
-    //           src="http://books.google.com/books/content?id=HkBlDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api" />
-    //         <p>Cek Aja Bagaimana Jika Tulisannya Panjang Ya</p>
-    //     </div>
-    // </div>
 
     for (let i = 0; i < 25; i++) {
         try {
@@ -46,7 +42,10 @@ function printHTML(data) {
             newList.innerText = data[i].volumeInfo["title"]
             newList.className = "py-8 text-white font-mono mt-1 font-thin capitalize leading-tight text-sm text-center"
             const aHref = document.createElement('a')
-            aHref.href = '/books/' + newList.innerHTML
+            // aHref.href = '/books/' + newList.innerText
+            
+            // to send url
+            buttonTitle.class = data[i]["selfLink"]
 
             // append
             divLapis2.append(imageBook)
@@ -66,36 +65,27 @@ function printHTML(data) {
 
             getDiv.append(fusion)
 
-
-
-
-
-
-            // -------------------- LAMA -----------------------------------
-            // judul
-            // const newList = document.createElement('p')
-            // newList.id = "printList"
-            // newList.innerText = data[i].volumeInfo["title"]
-            // newList.className = "font-bold"
-            // getDiv.append(newList)
-
-            // // gambar
-            // const imageBook = document.createElement('img')
-            // imageBook.id = "printList"
-            // imageBook.src = data[i].volumeInfo["imageLinks"].thumbnail
-            // getDiv.append(imageBook)
-
-            // // author
-            // const authorBook = document.createElement('p')
-            // authorBook.id = "printList"
-            // authorBook.innerText = "Author : " + data[i].volumeInfo["authors"]
-            // getDiv.append(authorBook)
-
-
         } catch(e) {
             console.log("ERROR")
         }
     }
 }
+
+// select semua button
+setInterval(() => {
+    const allButton = document.querySelectorAll('button')
+    for (let buton of allButton) {
+        if (buton.id == "printList") {
+            buton.addEventListener('click', function() {
+                console.log(this.class)
+
+                const tampilanDiv = document.createElement('div')
+                tampilanDiv.id = "tampilan"
+
+                Details(this.class)
+            })
+        }
+    }
+}, 1000)
 
 export default Books;
