@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Books from "./Books";
 
 const GetData = (url) => {
 
@@ -9,7 +10,7 @@ const GetData = (url) => {
             // console.log(data["items"])
             let books= data["items"];
             // console.log(books)
-            printHTML(books)
+            Books(books)
             })
 
     return (
@@ -18,19 +19,5 @@ const GetData = (url) => {
         </div>
     );
 }
-
-function printHTML(data) {
-    console.log(data)
-
-    const getDiv = document.querySelector("#akuSuka")
-
-    for (let i = 0; i < 10; i++) {
-        const newList = document.createElement('p')
-        newList.innerText = data[i].volumeInfo["title"]
-        getDiv.append(newList)
-    }
-
-}
-
  
 export default GetData;

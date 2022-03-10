@@ -4,22 +4,22 @@ import Link from 'next/link'
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import GetData from './GetData';
-// import DataFetching from './DataFetching';
 
 const Search = () => {
 
-    const router = useRouter();
+    // const router = useRouter();
 
-    setInterval(() => {
-        const buttonInput = document.querySelector('#searchButton')
-        buttonInput.addEventListener('click', function() {
-            const isiInput = document.querySelector('#searchBook')
-            // router.push('/books/' +isiInput.value)
-            // router.push('https://www.googleapis.com/books/v1/volumes?q=' + isiInput.value)
-            GetData('https://www.googleapis.com/books/v1/volumes?q='+isiInput.value)
-            // DataFetching('https://www.googleapis.com/books/v1/volumes?q='+isiInput.value)
-        })
-    }, 1000)
+    // setInterval(() => {
+    //     const buttonInput = document.querySelector('#searchButton')
+
+    //     buttonInput.addEventListener('click', function() {
+    //         const isiInput = document.querySelector('#searchBook')
+    //         // router.push('/books/' +isiInput.value)
+    //         // router.push('https://www.googleapis.com/books/v1/volumes?q=' + isiInput.value)
+    //         GetData('https://www.googleapis.com/books/v1/volumes?q='+isiInput.value)
+    //         // DataFetching('https://www.googleapis.com/books/v1/volumes?q='+isiInput.value)
+    //     })
+    // }, 1000)
 
     return (
         <nav class="flex py-3 px-5 text-gray-700 bg-gray-50 border border-gray-200 dark:bg-gray-800 dark:border-gray-700" aria-label="Breadcrumb">
@@ -84,6 +84,8 @@ function tryAja() {
     
     linkNi.append(coba)
     all.append(linkNi)
+
+    GetData('https://www.googleapis.com/books/v1/volumes?q='+isiInput.value)
 }
 
 export default Search;
