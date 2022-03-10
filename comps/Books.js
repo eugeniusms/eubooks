@@ -44,7 +44,7 @@ function printHTML(data) {
             const newList = document.createElement('p')
             newList.id = "printList"
             newList.innerText = data[i].volumeInfo["title"]
-            newList.className = "font-semibold text-center"
+            newList.className = "text-sm font-semibold text-center"
             // newList.className = "font-mono text-sky-400"
             // append
             divLapis2.append(imageBook)

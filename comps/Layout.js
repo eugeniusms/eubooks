@@ -8,7 +8,7 @@ const Layout = ({ children }) => {
     return (
         <div className="content">
             <Search />
-            <Navbar />
+            {/* <Navbar /> */}
             <GetData />
             {/* <DataFetching /> */}
             { children }
