@@ -1,19 +1,78 @@
 import Head from 'next/head'
+import Image from 'next/image'
 import Link from 'next/link'
 import Navbar from '../comps/navbar'
 import Footer from '../comps/Footer'
 
 export default function Home() {
   return (
-    <div>
+    <div class="py-3 px-5 text-gray-700 bg-gray-50 border-gray-200 dark:bg-gray-800 dark:border-gray-700">
       <Head>
             <title>Eubooks | Home</title>
             <meta name="keywords" content="book"/>  
       </Head>
       <link href="/dist/output.css" rel="stylesheet"></link>
+      
+      <p class="text-center text-4xl text-white font-bold">Welcome to Eubooks!</p>
+      <p class="text-center text-2xl text-slate-400">We will serve you by providing our best service.</p>
+
+      {/* <Image src="https://jooinn.com/images/macbook-pro-on-brown-wooden-desk.jpg" class="bg-auto" /> */}
+
+      <br/>
+      <div class="flex justify-center">
+          <Image src="/macbook.jpg" class="block opacity-30 hover:ease-in duration-300 hover:opacity-50" width={1000} height={500}/>
+      </div>
+
+      <br/>
+
+      <div class="flex justify-center">
+        <a href="/books">
+          <button class="flex inline bg-blue-500 shadow-lg shadow-blue-500/50 text-white focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-8 py-4 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+              Start
+          </button>
+        </a>
+        <a href="/about">
+          <button class="flex inline bg-blue-500 shadow-lg shadow-blue-500/50 text-white focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-8 py-4 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+              Learn More
+          </button>
+        </a>
+      </div>
+
+      <p class="text-center text-4xl text-white font-bold">Built exclusively for you</p>
+      <p class="text-center text-2xl text-slate-400">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+      <p  class="text-center text-2xl text-slate-400">mollit laborum — semper quis lectus nulla.</p>
+      
 
 
-      <section class="overflow-hidden text-gray-700 ">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      {/* <section class="overflow-hidden text-gray-700 ">
     <div class="container px-5 py-2 mx-auto lg:pt-2 lg:px-2">
       <div class="flex flex-wrap -m-1 md:-m-2">
         <div class="flex flex-wrap w-1/5">
@@ -155,6 +214,24 @@ export default function Home() {
       <Link href="/books">
         <a>See Book Listing</a>
       </Link>
+
+      <div>
+                <div class="inline-flex rounded-md shadow-sm" role="group">
+                    <Link href="/about">
+                        <button type="button" class="inline-flex items-center py-2 px-4 text-sm font-medium text-gray-900 bg-transparent rounded-l-lg border border-gray-900 hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
+                            <svg class="mr-2 w-4 h-4 fill-current" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-6-3a2 2 0 11-4 0 2 2 0 014 0zm-2 4a5 5 0 00-4.546 2.916A5.986 5.986 0 0010 16a5.986 5.986 0 004.546-2.084A5 5 0 0010 11z" clip-rule="evenodd"></path></svg>
+                            Log In
+                        </button>
+                    </Link>
+
+                    <Link href="/books">
+                        <button type="button" class="inline-flex items-center py-2 px-4 text-sm font-medium text-gray-900 bg-transparent rounded-r-md border border-gray-900 hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
+                            <svg class="mr-2 w-4 h-4 fill-current" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M2 9.5A3.5 3.5 0 005.5 13H9v2.586l-1.293-1.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 15.586V13h2.5a4.5 4.5 0 10-.616-8.958 4.002 4.002 0 10-7.753 1.977A3.5 3.5 0 002 9.5zm9 3.5H9V8a1 1 0 012 0v5z" clip-rule="evenodd"></path></svg>
+                            Sign Up
+                        </button>
+                    </Link>
+                </div>
+            </div> */}
 
     </div>
   );
