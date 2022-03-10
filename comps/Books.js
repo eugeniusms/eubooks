@@ -28,7 +28,7 @@ function printHTML(data) {
             divLapis1.id = "printList"
             // divlapis2
             const divLapis2 = document.createElement('div')
-            divLapis2.className = "w-full p-1 md:p-2 bg-white rounded-3xl shadow border p-6 w-64"
+            divLapis2.className = "w-full bg-white rounded-3xl shadow border p-6 w-64"
             divLapis2.id = "printList"
             // gambar
             const imageBook = document.createElement('img')
@@ -45,13 +45,14 @@ function printHTML(data) {
             newList.id = "printList"
             newList.innerText = data[i].volumeInfo["title"]
             newList.className = "py-8 text-white font-mono mt-1 font-thin capitalize leading-tight text-sm text-center"
-            // newList.className = "font-mono text-sky-400"
+
             // append
             divLapis2.append(imageBook)
 
             buttonTitle.append(newList)
 
             divLapis1.append(divLapis2)
+
 
             const fusion = document.createElement('div')
             fusion.id = "printList"

@@ -7,8 +7,8 @@ import GetData from "./GetData"
 const Layout = ({ children }) => {
     return (
         <div className="content">
+            <Navbar />
             <Search />
-            {/* <Navbar /> */}
             <GetData />
             {/* <DataFetching /> */}
             { children }
