@@ -1,4 +1,6 @@
 import BookDetails from "./BookDetails";
+import Navbar from "../../comps/navbar";
+import Search from "../../comps/Search";
 
 const Details = ( url ) => {
 
@@ -16,9 +18,15 @@ const Details = ( url ) => {
             })
 
     return (
+        <>
+        <div class="border border-gray-200 dark:border-gray-700">
+                <Navbar />
+                <Search />
+        </div>
         <div id="tampilan" class="py-3 px-5 text-gray-700 bg-gray-50 border-gray-200 dark:bg-gray-800 dark:border-gray-700">
             {/* Isi Content */}
         </div>
+        </>
     )
 }
 

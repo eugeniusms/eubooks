@@ -7,13 +7,13 @@ import GetData from "./GetData"
 const Layout = ({ children }) => {
     return (
         <div className="content">
-            <div class="border border-gray-200 dark:border-gray-700">
+            {/* <div class="border border-gray-200 dark:border-gray-700">
                 <Navbar />
                 <Search />
-            </div>
-            <GetData />
+            </div> */}
             {/* <DataFetching /> */}
             { children }
+            <GetData />
             <Footer />
         </div>
         

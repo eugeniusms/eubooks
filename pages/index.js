@@ -38,7 +38,12 @@ export default function Home() {
         </a>
       </div>
 
+      <br/>
+
       <p class="text-center text-4xl text-white font-bold">Built exclusively for you</p>
+
+      <br/>
+
       <p class="text-center text-2xl text-slate-400">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
       <p  class="text-center text-2xl text-slate-400">mollit laborum — semper quis lectus nulla.</p>
       
