@@ -33,20 +33,21 @@ function printHTML(data) {
             // gambar
             const imageBook = document.createElement('img')
             imageBook.alt = "gallery"
-            imageBook.className = "block object-cover object-center w-30px h-30px rounded-lg"
+            imageBook.className = "block m-auto object-cover object-center w-30px h-30px rounded-lg"
             imageBook.id = "printList"
             imageBook.src = data[i].volumeInfo["imageLinks"].thumbnail
             // judul
             const buttonTitle = document.createElement('button')
             buttonTitle.id = "printList"
-            buttonTitle.className = "text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
-            const newList = document.createElement('p')
-            newList.id = "printList"
-            newList.innerText = data[i].volumeInfo["title"]
-            newList.className = "font-mono text-sky-400"
+            buttonTitle.className = "block m-auto text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            buttonTitle.innerText = data[i].volumeInfo["title"]
+            // const newList = document.createElement('p')
+            // newList.id = "printList"
+            // newList.innerText = data[i].volumeInfo["title"]
+            // newList.className = "font-mono text-sky-400"
             // append
             divLapis2.append(imageBook)
-            buttonTitle.append(newList)
+            // buttonTitle.append(newList)
             divLapis2.append(buttonTitle)
             divLapis1.append(divLapis2)
             getDiv.append(divLapis1)
