@@ -45,11 +45,14 @@ function printHTML(data) {
             newList.id = "printList"
             newList.innerText = data[i].volumeInfo["title"]
             newList.className = "py-8 text-white font-mono mt-1 font-thin capitalize leading-tight text-sm text-center"
+            const aHref = document.createElement('a')
+            aHref.href = '/books/' + newList.innerHTML
 
             // append
             divLapis2.append(imageBook)
 
             buttonTitle.append(newList)
+            aHref.append(buttonTitle)
 
             divLapis1.append(divLapis2)
 
@@ -58,7 +61,7 @@ function printHTML(data) {
             fusion.id = "printList"
             fusion.className = "p-8 rounded-3xl flex flex-wrap w-1/5"
 
-            fusion.append(buttonTitle)
+            fusion.append(aHref)
             fusion.append(divLapis2)
 
             getDiv.append(fusion)
