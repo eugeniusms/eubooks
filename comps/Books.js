@@ -24,11 +24,11 @@ function printHTML(data) {
         try {
             // divlapis1
             const divLapis1 = document.createElement('div')
-            divLapis1.className = "p-8 rounded-xl flex flex-wrap w-1/5"
+            divLapis1.className = "p-8 rounded-3xl flex flex-wrap w-1/5"
             divLapis1.id = "printList"
             // divlapis2
             const divLapis2 = document.createElement('div')
-            divLapis2.className = "w-full p-1 md:p-2 bg-white rounded shadow border p-6 w-64"
+            divLapis2.className = "w-full p-1 md:p-2 bg-white rounded-3xl shadow border p-6 w-64"
             divLapis2.id = "printList"
             // gambar
             const imageBook = document.createElement('img')
@@ -44,6 +44,7 @@ function printHTML(data) {
             const newList = document.createElement('p')
             newList.id = "printList"
             newList.innerText = data[i].volumeInfo["title"]
+            newList.className = "font-semibold text-center"
             // newList.className = "font-mono text-sky-400"
             // append
             divLapis2.append(imageBook)
