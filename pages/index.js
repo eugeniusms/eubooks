@@ -59,7 +59,7 @@ export default function Home() {
 
       <h1 className="text-3xl font-bold underline">Homepage</h1>
       <p>Lorem Ipsum</p>
-      <div class="border-4 border-zinc-50 rounded-lg border-8">
+      <div class="p-8 bg-white rounded-xl shadow border p-6 w-64">
         <p class="font-bold text-purple-700 text-opacity-75">The quick brown fox ...</p>
         <p class="font-mono text-sky-400">APA INI FONT</p>
       </div>

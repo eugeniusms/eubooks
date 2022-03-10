@@ -24,11 +24,11 @@ function printHTML(data) {
         try {
             // divlapis1
             const divLapis1 = document.createElement('div')
-            divLapis1.className = "border-zinc-50 round-lg border-8 flex flex-wrap w-1/5"
+            divLapis1.className = "p-8 rounded-xl flex flex-wrap w-1/5"
             divLapis1.id = "printList"
             // divlapis2
             const divLapis2 = document.createElement('div')
-            divLapis2.className = "w-full p-1 md:p-2"
+            divLapis2.className = "w-full p-1 md:p-2 bg-white rounded shadow border p-6 w-64"
             divLapis2.id = "printList"
             // gambar
             const imageBook = document.createElement('img')
@@ -39,15 +39,15 @@ function printHTML(data) {
             // judul
             const buttonTitle = document.createElement('button')
             buttonTitle.id = "printList"
-            buttonTitle.className = "block m-auto text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            buttonTitle.innerText = data[i].volumeInfo["title"]
-            // const newList = document.createElement('p')
-            // newList.id = "printList"
-            // newList.innerText = data[i].volumeInfo["title"]
+            // buttonTitle.className = "block m-auto text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            // buttonTitle.innerText = data[i].volumeInfo["title"]
+            const newList = document.createElement('p')
+            newList.id = "printList"
+            newList.innerText = data[i].volumeInfo["title"]
             // newList.className = "font-mono text-sky-400"
             // append
             divLapis2.append(imageBook)
-            // buttonTitle.append(newList)
+            buttonTitle.append(newList)
             divLapis2.append(buttonTitle)
             divLapis1.append(divLapis2)
             getDiv.append(divLapis1)
