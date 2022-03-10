@@ -17,7 +17,7 @@ const Details = ( url ) => {
 
     return (
         <div id="tampilan" class="py-3 px-5 text-gray-700 bg-gray-50 border-gray-200 dark:bg-gray-800 dark:border-gray-700">
-            <h1>Details Page</h1>
+            {/* Isi Content */}
         </div>
     )
 }

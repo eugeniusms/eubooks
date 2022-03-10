@@ -139,11 +139,17 @@ export default function Home() {
       <div class="block m-auto object-cover object-center w-30px h-30px rounded-lg hover:ease-in duration-300 hover:scale-125">
         AKU
       </div>
-      <div class="block m-auto object-cover object-center w-30px h-30px rounded-lg hover:ease-in duration-300 hover:scale-110 hover:rotate-45">
-        AKU
+      <div class="justify-items-center block m-auto object-cover object-center w-30px h-30px rounded-lg hover:ease-in duration-300 hover:scale-110 hover:rotate-45">
+        AKUAA
       </div>
       <div class="block m-auto object-cover object-center w-30px h-30px rounded-lg hover:ease-in duration-300 hover:scale-110">
         AKU
+      </div>
+
+      <div class="flex justify-center ...">
+        <div>01</div>
+        <div>02</div>
+        <div>03</div>
       </div>
 
       <Link href="/books">
