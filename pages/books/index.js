@@ -7,7 +7,7 @@ const Details = ( url ) => {
     for (let i = 0; i < 10; i++) {
         console.log(url)
     }
-    
+
     fetch(url)
         .then(response => response.json())
         .then(data => {
@@ -16,6 +16,7 @@ const Details = ( url ) => {
             // console.log(books)
             BookDetails(info)
             })
+
 
     return (
         <>

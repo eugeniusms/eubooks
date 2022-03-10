@@ -78,4 +78,18 @@ function tryAja() {
     GetData('https://www.googleapis.com/books/v1/volumes?q='+isiInput.value + '&&maxResults=25')
 }
 
+setTimeout(() => {
+    // default saat input tidak ada
+    try {
+    const isiInput = document.querySelector('#searchBook')
+        if (isiInput.value == "") {
+            // Default program
+            isiInput.value = "Psychology of Money"
+            GetData('https://www.googleapis.com/books/v1/volumes?q='+ "psychologyofmoney" + '&&maxResults=25')
+        }
+    } catch (e) {
+        console.log("Welcome!")
+    }
+}, 2000)
+
 export default Search;
