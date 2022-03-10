@@ -24,7 +24,7 @@ function printHTML(data) {
         try {
             // divlapis1
             const divLapis1 = document.createElement('div')
-            divLapis1.className = "flex flex-wrap w-1/5"
+            divLapis1.className = "border-zinc-50 round-lg border-8 flex flex-wrap w-1/5"
             divLapis1.id = "printList"
             // divlapis2
             const divLapis2 = document.createElement('div')
@@ -33,17 +33,21 @@ function printHTML(data) {
             // gambar
             const imageBook = document.createElement('img')
             imageBook.alt = "gallery"
-            imageBook.className = "block object-cover object-center w-50px h-50px rounded-lg"
+            imageBook.className = "block object-cover object-center w-30px h-30px rounded-lg"
             imageBook.id = "printList"
             imageBook.src = data[i].volumeInfo["imageLinks"].thumbnail
             // judul
+            const buttonTitle = document.createElement('button')
+            buttonTitle.id = "printList"
+            buttonTitle.className = "text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
             const newList = document.createElement('p')
             newList.id = "printList"
             newList.innerText = data[i].volumeInfo["title"]
-            newList.className = "font-bold"
+            newList.className = "font-mono text-sky-400"
             // append
             divLapis2.append(imageBook)
-            divLapis2.append(newList)
+            buttonTitle.append(newList)
+            divLapis2.append(buttonTitle)
             divLapis1.append(divLapis2)
             getDiv.append(divLapis1)
 
