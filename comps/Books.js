@@ -29,7 +29,7 @@ function printHTML(data) {
             // gambar
             const imageBook = document.createElement('img')
             imageBook.alt = "gallery"
-            imageBook.className = "block m-auto object-cover object-center w-30px h-30px rounded-lg hover:ease-in duration-300 hover:scale-110"
+            imageBook.className = "block m-auto object-cover object-center w-30px h-30px rounded-lg hover:ease-in duration-300 hover:scale-110 hover:rotate-6"
             imageBook.id = "printList"
             imageBook.src = data[i].volumeInfo["imageLinks"].thumbnail
             // judul

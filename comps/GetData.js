@@ -14,7 +14,7 @@ const GetData = (url) => {
             })
 
     return (
-        <section class="overflow-hidden text-gray-700 flex py-3 px-5 text-gray-700 bg-gray-50 border border-gray-200 dark:bg-gray-800 dark:border-gray-700" aria-label="Breadcrumb">
+        <section class="overflow-hidden text-gray-700 flex py-3 px-5 text-gray-700 bg-gray-50 dark:bg-gray-800 dark:border-gray-700" aria-label="Breadcrumb">
             <div class="container px-5 py-2 mx-auto lg:pt-2 lg:px-2">
                 <div id="akuSuka" class="flex flex-wrap -m-1 md:-m-2">
                 </div>

@@ -139,7 +139,7 @@ export default function Home() {
       <div class="block m-auto object-cover object-center w-30px h-30px rounded-lg hover:ease-in duration-300 hover:scale-125">
         AKU
       </div>
-      <div class="block m-auto object-cover object-center w-30px h-30px rounded-lg hover:ease-in duration-300 hover:scale-115">
+      <div class="block m-auto object-cover object-center w-30px h-30px rounded-lg hover:ease-in duration-300 hover:scale-110 hover:rotate-45">
         AKU
       </div>
       <div class="block m-auto object-cover object-center w-30px h-30px rounded-lg hover:ease-in duration-300 hover:scale-110">

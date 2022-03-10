@@ -3,11 +3,11 @@ import Image from 'next/image';
 
 const Navbar = () => {
     return (
-        <nav class="flex justify-end py-3 px-5 text-gray-700 bg-gray-50 border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+        <nav class="flex justify-end py-3 px-5 text-gray-700 bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
             
             <div class="flex-1 logo">
                 <p class="inline-flex text-3xl font-thin dark:text-white">Eubooks</p>
-                <Image src="/logo.png" class="inline-flex" width={40} height={40}/>
+                <Image src="/logo.png" class="inline-flex hover:ease-in duration-300 hover:rotate-45" width={40} height={40}/>
             </div>
 
             {/* <div><Link href="/"><a>Home</a></Link></div>
