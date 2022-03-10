@@ -1,3 +1,5 @@
+import BookDetails from "./BookDetails";
+
 const Details = ( url ) => {
 
     // setTimeout(() => {
@@ -14,7 +16,7 @@ const Details = ( url ) => {
             // console.log(data["items"])
             let info = data;
             // console.log(books)
-            PrintDynamic(info)
+            BookDetails(info)
             })
 
     return (
@@ -22,23 +24,6 @@ const Details = ( url ) => {
             <h1>Details Page</h1>
         </div>
     )
-}
-
-function PrintDynamic(info) {
-
-    // just show only one
-    const allDetails = document.querySelectorAll('#detailList')
-    for (let list of allDetails) {
-        list.remove()
-    }
-
-    const tampilan = document.querySelector('#tampilan')
-
-    const heading = document.createElement('h2')
-    heading.id = "detailList"
-    heading.innerText = info.volumeInfo["title"]
-
-    tampilan.append(heading)
 }
 
 

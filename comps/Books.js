@@ -81,7 +81,7 @@ setInterval(() => {
 
                 const tampilanDiv = document.createElement('div')
                 tampilanDiv.id = "tampilan"
-
+                
                 Details(this.class)
             })
         }
