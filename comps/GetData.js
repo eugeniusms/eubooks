@@ -14,9 +14,12 @@ const GetData = (url) => {
             })
 
     return (
-        <div id="akuSuka">
-            <p>Here comes JSX !</p>
-        </div>
+        <section class="overflow-hidden text-gray-700 ">
+            <div class="container px-5 py-2 mx-auto lg:pt-2 lg:px-2">
+                <div id="akuSuka" class="flex flex-wrap -m-1 md:-m-2">
+                </div>
+            </div>
+        </section>
     );
 }
  

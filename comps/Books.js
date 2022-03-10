@@ -10,7 +10,6 @@ function printHTML(data) {
         list.remove()
     }
 
-
     const getDiv = document.querySelector("#akuSuka")
 
     for (let i = 0; i < 25; i++) {
