@@ -120,7 +120,7 @@ setTimeout(() => {
             GetData('https://www.googleapis.com/books/v1/volumes?q='+ "psychologyofmoney" + '&&maxResults=25')
         }
     } catch (e) {
-        console.log("Welcome!")
+        // continue if error
     }
 }, 10)
 

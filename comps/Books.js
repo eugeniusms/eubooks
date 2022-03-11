@@ -1,4 +1,3 @@
-import { getStaticProps } from "../pages/books/[id]"
 import Details from "../pages/books"
 
 // Fungsi Books digunakan untuk mengalihkan data yang dipanggil ke cetak HTML
@@ -70,12 +69,17 @@ function printHTML(data) {
                 ratingStar.innerText = "- Unrated -"
             }
 
+            // Menyusun aHref
+            const aHref = document.createElement('a')
+
             // Memasukkan imageBook ke divLapis2
             divLapis2.append(imageBook)
             // Judul akan dimasukkan ke dalam button 
             buttonTitle.append(newList)
             // kemmudian divHref akan dimasukkan ke dalam divLapis2 juga
             divLapis2.append(divHref)
+            // Memasukkan buttonTitle ke aHref
+            aHref.append(buttonTitle)
 
             // Fusion digunakan untuk menggabungkan semua komponen buku menjadi 1
             const fusion = document.createElement('div')
@@ -92,7 +96,7 @@ function printHTML(data) {
             getDiv.append(fusion)
 
         } catch(e) {
-            console.log("ERROR")
+            // continue if error
         }
     }
 }

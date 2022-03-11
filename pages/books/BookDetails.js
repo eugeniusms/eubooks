@@ -120,7 +120,7 @@ function PrintDynamic(info) {
     
     } catch (e) {
         // Saat object tereplikasi beberapa kali
-        console.log("ERROR")
+        // continue if error
     }
 }
 
