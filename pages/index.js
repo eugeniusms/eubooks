@@ -7,7 +7,7 @@ import Footer from '../comps/Footer'
 export default function Home() {
       return (
       // Tampilan homepage
-      <div class="py-3 px-5 text-gray-700 bg-gray-50 border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+      <div className="py-3 px-5 text-gray-700 bg-gray-50 border-gray-200 dark:bg-gray-800 dark:border-gray-700">
 
           {/* Inisiasi head halaman  */}
           <Head>
@@ -19,14 +19,14 @@ export default function Home() {
           <br/>
 
           {/* Mencetak selamat datang dan slogan */}
-          <p class="text-center text-4xl text-white font-bold">Welcome to Eubooks!</p>
-          <p class="text-center text-2xl text-slate-400">We will serve you by providing our best service.</p>
+          <p className="text-center text-4xl text-white font-bold">Welcome to Eubooks!</p>
+          <p className="text-center text-2xl text-slate-400">We will serve you by providing our best service.</p>
 
           <br/>
 
           {/* Mencetak gambar landing */}
-          <div class="flex justify-center">
-              <Image src="/macbook.jpg" class="block opacity-30 hover:ease-in duration-300 hover:opacity-50" width={1000} height={500}/>
+          <div className="flex justify-center">
+              <Image src="/macbook.jpg" className="block opacity-30 hover:ease-in duration-300 hover:opacity-50" width={1000} height={500}/>
           </div>
 
           <br/>
@@ -37,16 +37,16 @@ export default function Home() {
           <br/>
 
           {/* Menyusun dua tombol utama */}
-          <div class="flex justify-center">
+          <div className="flex justify-center">
             <a href="/books">
               {/* Tombol ini menuju ke program utama pencarian buku */}
-              <button class="flex inline bg-blue-500 shadow-lg shadow-blue-500/50 text-white focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-8 py-4 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+              <button className="flex inline bg-blue-500 shadow-lg shadow-blue-500/50 text-white focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-8 py-4 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                   Get Started
               </button>
             </a>
             {/* Tombol ini menuju about page */}
             <a href="/about">
-              <button class="flex inline py-4 px-8 mr-2 mb-2 text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
+              <button className="flex inline py-4 px-8 mr-2 mb-2 text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
                   Learn More
               </button>
             </a>
@@ -55,8 +55,8 @@ export default function Home() {
           <br/>
 
           {/* Menyusun slogan by slogan */}
-          <p class="text-center text-4xl text-white font-bold">Built exclusively for you</p>
-          <p class="text-center text-2xl text-slate-400">We made this to help facilitate literacy access for everyone</p>
+          <p className="text-center text-4xl text-white font-bold">Built exclusively for you</p>
+          <p className="text-center text-2xl text-slate-400">We made this to help facilitate literacy access for everyone</p>
 
       </div>
   );

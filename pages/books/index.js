@@ -27,15 +27,15 @@ const Details = ( url ) => {
             </Head>
 
             {/* Inisiasi navbar dan search untuk page ini */}
-            <div class="border border-gray-200 dark:border-gray-700">
+            <div className="border border-gray-200 dark:border-gray-700">
                     <Navbar />
-                <div class="py-3 px-5 text-gray-700 bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
+                <div className="py-3 px-5 text-gray-700 bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
                     <Search />
                 </div>
             </div>
 
             {/* Tampilan content akan ditampilkan dalam div id="tampilan" */}
-            <div id="tampilan" class="py-3 px-5 text-gray-700 bg-gray-50 border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+            <div id="tampilan" className="py-3 px-5 text-gray-700 bg-gray-50 border-gray-200 dark:bg-gray-800 dark:border-gray-700">
                 {/* Isi Content */}
             </div>
         </>
