@@ -10,16 +10,20 @@ const Login = () => {
             <br/>
             <br/>
             <br/>
+            <br/>   
+            
+            <div class="flex justify-center">
+                <p class="inline-flex text-7xl font-thin dark:text-white">Eubooks</p>
+                <Image src="/logo.png" class="inline-flex hover:ease-in duration-300 hover:rotate-45" width={80} height={80}/>
+            </div>
+
             <br/>
-            <br/>
-
-
-            <p class="text-center text-4xl text-white font-bold">Sign in to your account</p>
-            <p class="text-center text-2xl text-white font-bold">Or start your 14-day free trial</p>
+            <p class="text-center text-xl text-white font-bold">Sign in to your account</p>
+            {/* <p class="text-sky-400/75 text-center text-xl text-white font-bold">Or start your 14-day free trial</p> */}
 
             <br/>
 
-            <p class="text-center text-xl text-white font-bold">Sign in with</p>
+            {/* <p class="text-center text-xl text-white font-bold">Sign in with</p> */}
 
             <br/>
 
@@ -32,7 +36,7 @@ const Login = () => {
             </div>
 
             <br/>
-            <p class="text-center text-xl text-white font-bold">Other Options</p>
+            <p class="text-center text-lg text-white font-bold">Other Options</p>
             <br/>
             
             <div class="flex justify-center">
@@ -47,6 +51,13 @@ const Login = () => {
                     Sign in with Github
                  </button>
             </div>
+
+
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        <br/>
 
         </div>
         );

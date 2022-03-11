@@ -300,6 +300,18 @@ export default function Home() {
                   </button>
                 </div>
 
+                <p class="text-sky-400/75 text-center text-xl text-white font-bold">Or start your 14-day free trial</p>
+
+             <div class="flex justify-center">
+                <p class="inline-flex text-5xl font-thin dark:text-white">Eubooks</p>
+                <Image src="/logo.png" class="inline-flex hover:ease-in duration-300 hover:rotate-45" width={100} height={100}/>
+            </div>
+
+            <div class="flex justify-center">
+                <p class="inline-flex text-7xl font-thin dark:text-white">Eubooks</p>
+                <Image src="/logo.png" class="inline-flex hover:ease-in duration-300 hover:rotate-45" width={80} height={80}/>
+            </div>
+
     </div>
   );
 }
