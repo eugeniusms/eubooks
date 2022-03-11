@@ -13,6 +13,9 @@ export default function Home() {
       </Head>
       <link href="/dist/output.css" rel="stylesheet"></link>
       
+      <br/>
+      <br/>
+
       <p class="text-center text-4xl text-white font-bold">Welcome to Eubooks!</p>
       <p class="text-center text-2xl text-slate-400">We will serve you by providing our best service.</p>
 
@@ -28,11 +31,11 @@ export default function Home() {
       <div class="flex justify-center">
         <a href="/books">
           <button class="flex inline bg-blue-500 shadow-lg shadow-blue-500/50 text-white focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-8 py-4 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-              Start
+              Get Started
           </button>
         </a>
         <a href="/about">
-          <button class="flex inline bg-blue-500 shadow-lg shadow-blue-500/50 text-white focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-8 py-4 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+          <button class="flex inline py-4 px-8 mr-2 mb-2 text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
               Learn More
           </button>
         </a>
@@ -71,9 +74,15 @@ export default function Home() {
 
 
 
+    <button class="text-xs hover:text-white font-medium rounded-lg px-5 py-2.5 text-center hover:ease-in duration-400 hover:text-sm">
+      YA</button>
 
+    <div class="box-content h-100 w-100 p-4 border-2 rounded-xl">
+      Cek
+      </div>
 
-
+    <div class="block m-auto object-cover object-center w-30px h-30px rounded-lg hover:ease-in duration-300 hover:scale-110 hover:rotate-6">
+      Ampun</div>
 
 
 

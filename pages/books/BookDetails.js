@@ -51,12 +51,17 @@ function PrintDynamic(info) {
         author.className = "text-center text-white"
 
         // Description
+        const divDesc = document.createElement('div')
+        divDesc.className = "box-content h-100 w-100 p-4 border-2 rounded-xl"
+        divDesc.id = "detailList"
         const description = document.createElement('p')
         description.id = "detailList"
         description.innerHTML = info.volumeInfo["description"]
         description.className = "text-center text-white antialiased"
 
         // newLine
+        const newLine0 = document.createElement('br')
+        newLine0.id = "detailList"
         const newLine = document.createElement('br')
         newLine.id = "detailList"
         const newLine2 = document.createElement('br')
@@ -64,6 +69,7 @@ function PrintDynamic(info) {
 
         // append dan validasi 
 
+        tampilan.append(newLine0)
         tampilan.append(heading)
 
         //saat undefined maka tidak akan diappend
@@ -79,7 +85,8 @@ function PrintDynamic(info) {
         tampilan.append(newLine2)
 
         if (description.innerText != "undefined") {
-            tampilan.append(description)
+            divDesc.append(description)
+            tampilan.append(divDesc)
         }
 
         tampilan.append(newLine)

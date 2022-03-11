@@ -78,6 +78,7 @@ function tryAja() {
     GetData('https://www.googleapis.com/books/v1/volumes?q='+isiInput.value + '&&maxResults=25')
 }
 
+// Set Default Page
 setTimeout(() => {
     // default saat input tidak ada
     try {
@@ -90,6 +91,6 @@ setTimeout(() => {
     } catch (e) {
         console.log("Welcome!")
     }
-}, 2000)
+}, 10)
 
 export default Search;
