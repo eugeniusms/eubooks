@@ -6,12 +6,9 @@ import GetData from "./GetData"
 
 const Layout = ({ children }) => {
     return (
+        // Tampilan Layout website secara keseluruhan
         <div className="content">
-            {/* <div class="border border-gray-200 dark:border-gray-700">
-                <Navbar />
-                <Search />
-            </div> */}
-            {/* <DataFetching /> */}
+            {/* Content dari website */}
             { children }
             <GetData />
             <Footer />

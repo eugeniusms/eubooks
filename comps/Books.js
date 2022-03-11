@@ -1,103 +1,94 @@
 import { getStaticProps } from "../pages/books/[id]"
 import Details from "../pages/books"
 
+// Fungsi Books digunakan untuk mengalihkan data yang dipanggil ke cetak HTML
 const Books = (data) => {
+    // Pencetakan HTML dilakukan oleh printHTML()
     printHTML(data)
 }
 
+// Fungsi ini berperan mencetak susunan HTML dari hasil pencarian user
 function printHTML(data) {
-    console.log(data)
-
-    // just show only one
+    // Lakukan reset hasil setiap kali user melakukan pencarian
     const allList = document.querySelectorAll('#printList')
     for (let list of allList) {
         list.remove()
     }
 
+    // Mengambil query #akuSuka
     const getDiv = document.querySelector("#akuSuka")
 
+    // Untuk 25 object dalam array (25 buku) akan dilakukan pencetakan dengan object HTML berikut
     for (let i = 0; i < 25; i++) {
         try {
-            // divHref
+            // Menyusun link menuju fetch per buku dengan divHref
             const divHref = document.createElement('div')
             divHref.id = "printList"
             divHref.class = data[i]["selfLink"]
             const divLapis2 = document.createElement('div')
             divLapis2.className = "w-full bg-white rounded-3xl shadow border p-6 w-64 hover:ease-in duration-300 hover:bg-slate-400"
             divLapis2.id = "printList"
-            // gambar
+
+            // Menyusun gambar buku
             const imageBook = document.createElement('img')
             imageBook.alt = "gallery"
             imageBook.className = "block m-auto object-cover object-center w-30px h-30px rounded-lg hover:ease-in duration-300 hover:scale-110 hover:rotate-6 hover:-translate-y-6 hover:translate-x-6"
             imageBook.id = "printList"
             imageBook.src = data[i].volumeInfo["imageLinks"].thumbnail
-            // judul
+            
+            // Menyusun judul buku
             const buttonTitle = document.createElement('button')
             buttonTitle.id = "printList"
             buttonTitle.className = "text-xs hover:text-white font-medium rounded-lg px-5 py-2.5 text-center hover:ease-in duration-300 hover:text-sm"
-            // buttonTitle.className = "block m-auto text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            // buttonTitle.innerText = data[i].volumeInfo["title"]
+            buttonTitle.class = data[i]["selfLink"]
+            // Menyusun isi judul buku dan stylenya
             const newList = document.createElement('p')
             newList.id = "printList"
             newList.innerText = '"' + data[i].volumeInfo["title"] + '"'
             newList.className = "text-white py-8 font-mono mt-1 font-thin capitalize leading-tight text-center"
-            // send to sorting (src -> validation) (title, rating, image, link)
+            // Inisiasi object property untuk send to sorting (src -> validation) (title, rating, image, link) *terkait dengan pengurutan rating
             newList.src = "buku"
             newList.rating = data[i].volumeInfo["averageRating"]
             newList.image = data[i].volumeInfo["imageLinks"].thumbnail
             newList.link = data[i]["selfLink"]
-            
-            const aHref = document.createElement('a')
-
-
-            // aHref.href = '/books/' + newList.innerText
-
-            // rating
-            // const rating = document.createElement('p')
-            // rating.id = "printList"
-            // rating.innerText = data[i].volumeInfo["averageRating"]
-            // generate rating star
+    
+            // Generate rating star
             const ratingStar = document.createElement('div')
             ratingStar.id = "printList"
             ratingStar.className = "text-xs text-slate-400 font-medium rounded-lg px-5 py-2.5 text-center hover:ease-in duration-300 hover:text-sm"
-            
+            // Default nilai bintang adalah 0, ketika error -> undefined juga 0
             let starCount = 0
             try {
                 starCount = parseInt(data[i].volumeInfo["averageRating"], 10)
             } catch (e) {
                 starCount = 0
             }
-
+            // Saat masih 0 maka statusnya adalah unrated, jika tidak maka generate bintangnya
             if(starCount > 0) {
                 ratingStar.innerHTML = generateStar(starCount)
             } else {
                 ratingStar.innerText = "- Unrated -"
             }
 
-
-            
-            // to send url
-            buttonTitle.class = data[i]["selfLink"]
-
-            // append
+            // Memasukkan imageBook ke divLapis2
             divLapis2.append(imageBook)
-
+            // Judul akan dimasukkan ke dalam button 
             buttonTitle.append(newList)
-            aHref.append(buttonTitle)
-
+            // kemmudian divHref akan dimasukkan ke dalam divLapis2 juga
             divLapis2.append(divHref)
-            // divHref.append(divLapis1)
 
+            // Fusion digunakan untuk menggabungkan semua komponen buku menjadi 1
             const fusion = document.createElement('div')
             fusion.id = "printList"
             fusion.className = "justify-center p-8 rounded-3xl flex flex-wrap md:w-1/5"
             fusion.src = data[i]["selfLink"]
 
+            // Fusion menambahkan setiap komponen yang akan dicetak
             fusion.append(aHref)
             fusion.append(divLapis2)
-            // fusion.append(rating)
             fusion.append(ratingStar)
 
+            // Setelah semua didapati maka tambahkan fusion ke dalam getDiv
             getDiv.append(fusion)
 
         } catch(e) {
@@ -106,25 +97,33 @@ function printHTML(data) {
     }
 }
 
+// Fungsi untuk menggenerate banyaknya bintang dan susunannya
 function generateStar(activeStar) {
+    // Inisiasi div dari kumpulan bintang
     let starHTML = `<ul class="flex justify-center">`
+
+    // Untuk bintang yang aktif panggilkan generateFullStar()
     for (let i = 0; i < activeStar; i++) {
         starHTML += generateFullStar()
     }
-    
+
+    // Untuk bintang yang tidak aktif panggilkan generateEmptyStar()
     if (activeStar < 5) {
         for (let i = 0; i < 5 - activeStar; i++) {
             starHTML +=generateEmptyStar()
         }
     }
     
+    // Akhiri div
     starHTML += `</ul>`
-
+    // Melakukan regex replace newline
     starHTML.replace(/\r?\n|\r/g, " ")
-    console.log(starHTML)
+
+    // Mengembalikan susunan HTML yang telah terbentuk
     return (starHTML)
 }
 
+// Fungsi untuk mengembalikan HTML code bintang penuh
 function generateFullStar() {
     return (
         `<li>
@@ -135,6 +134,7 @@ function generateFullStar() {
     )
 }
 
+// Fungsi untuk mengembalikan HTML code bintang kosong
 function generateEmptyStar() {
     return (
         `<li>
@@ -145,38 +145,39 @@ function generateEmptyStar() {
     )
 }
 
-// select semua button
+// Set Interval untuk mengambil input click dari user ingin membuka buku yang mana
 setInterval(() => {
-    // usefusion
+    // Pada setiap button yang ada jika button itu adalah printList maka saat diklik
+    // Akan mengambil Details
     const allButton = document.querySelectorAll('button')
     for (let buton of allButton) {
         if (buton.id == "printList") {
+            // Mengambil info apakah button diklik
             buton.addEventListener('click', function() {
-                console.log(this.class)
-
+                // Menyusun tampilan
                 const tampilanDiv = document.createElement('div')
                 tampilanDiv.id = "tampilan"
-                
+                // Mengambil fetch data dengan Details()
                 Details(this.class)
             })
         }
     }
 
-    // use fusion
+    // Pada setiap div yang ada jika div itu adalah "printList" maka saat diklik
+    // akan mengambil Details juga
     const allDiv = document.querySelectorAll('div')
     for (let divi of allDiv) {
         if (divi.id == "printList") {
+            // Mengambil info apakah div diklik
             divi.addEventListener('click', function() {
-                console.log(this.src)
-
+                // Menyusun tampilan
                 const tampilanDiv = document.createElement('div')
                 tampilanDiv.id = "tampilan"
-                
+                // Mengambil fetch data dengan Details()
                 Details(this.src)
             })
         }
     }
 }, 1000)
-
 
 export default Books;
