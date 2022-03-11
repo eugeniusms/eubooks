@@ -26,6 +26,9 @@ export default function Home() {
       </div>
 
       <br/>
+      <div id="indexPage"></div>
+
+      <br/>
 
       <div class="flex justify-center">
         <a href="/books">
@@ -44,10 +47,8 @@ export default function Home() {
 
       <p class="text-center text-4xl text-white font-bold">Built exclusively for you</p>
 
-      <br/>
-
-      <p class="text-center text-2xl text-slate-400">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
-      <p  class="text-center text-2xl text-slate-400">mollit laborum — semper quis lectus nulla.</p>
+      <p class="text-center text-2xl text-slate-400">We made this to help facilitate literacy access for everyone</p>
+     
       
 
 
@@ -353,6 +354,57 @@ export default function Home() {
   </li>
 </ul>
 
+<div class="relative overflow-hidden">
+  <Image src="/macbook.jpg" class="block opacity-30 hover:ease-in duration-300 hover:opacity-50" width={1000} height={500}/>
+  <div></div>
+</div>
+
     </div>
   );
 }
+
+function getQuote() {
+    const quoteText = [
+      "Books are the quietest and most constant of friends; they are the most accessible and wisest of counselors, and the most patient of teachers.",
+      "Many people, myself among them, feel better at the mere sight of a book.",
+      "One glance at a book and you hear the voice of another person, perhaps someone dead for 1,000 years. To read is to voyage through time.",
+      "When I have a little money, I buy books; and if I have any left, I buy food and clothes.",
+      "If you don’t like to read, you haven’t found the right book.",
+
+      "A book is a version of the world. If you do not like it, ignore it; or offer your own version in return.",
+      "Fairy tales are more than true: not because they tell us that dragons exist, but because they tell us that dragons can be beaten.",
+      "Books are good company, in sad times and happy times, for books are people – people who have managed to stay alive by hiding between the covers of a book.",
+      "A book is a garden, an orchard, a storehouse, a party, a company by the way, a counselor, a multitude of counselors.",
+      "A great book should leave you with many experiences, and slightly exhausted at the end. You live several lives while reading.",
+
+      "I love books. I adore everything about them. I love the feel of the pages on my fingertips. They are light enough to carry, yet so heavy with worlds and ideas. I love the sound of the pages flicking against my fingers. Print against fingerprints. Books make people quiet, yet they are so loud.",
+      "Books were my pass to personal freedom.",
+      "No man can be called friendless who has God and the companionship of good books.",
+      "A half-read book is a half-finished love affair.",
+      "If you would tell me the heart of a man, tell me not what he reads, but what he rereads.",
+
+      "A children’s story that can only be enjoyed by children is not a good children’s story in the slightest.",
+      "Wear the old coat and buy the new book.",
+      "The best books… are those that tell you what you know already.",
+      "I cannot remember the books I’ve read any more than the meals I have eaten; even so, they have made me.",
+      "I owe everything I am and everything I will ever be to books."
+    ]
+    return (quoteText[Math.floor(Math.random()*20)]) // random quote
+}
+
+setInterval(() => {
+    const quoteDel = document.querySelectorAll('p')
+    for (let quote of quoteDel) {
+      if (quote.id == "quoteId") {
+        quote.remove()
+      }
+    }
+
+    const quoteDiv = document.createElement('p')
+    quoteDiv.id = "quoteId"
+    quoteDiv.className = "italic text-center text-xl text-slate-400"
+    quoteDiv.innerText = '"' + getQuote() + '"'
+
+    const indexPg = document.querySelector('#indexPage')
+    indexPg.append(quoteDiv)
+}, 3141)
