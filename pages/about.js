@@ -34,10 +34,7 @@ const About = () => {
         </div>
 
         <br/>
-        <br/>
-
-        <p class="text-center text-4xl text-slate-400 font-bold">Thank You</p>
-
+        
         </div>
     );
 }
