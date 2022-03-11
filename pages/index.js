@@ -14,7 +14,6 @@ export default function Home() {
       <link href="/dist/output.css" rel="stylesheet"></link>
       
       <br/>
-      <br/>
 
       <p class="text-center text-4xl text-white font-bold">Welcome to Eubooks!</p>
       <p class="text-center text-2xl text-slate-400">We will serve you by providing our best service.</p>
