@@ -44,6 +44,24 @@ function PrintDynamic(info) {
         divLapis2.append(image)
         divLapis1.append(divLapis2)
 
+        // Star Rating
+        const ratingStar = document.createElement('div')
+        ratingStar.id = "detailList"
+        ratingStar.className = "text-xs text-slate-400 font-medium rounded-lg px-5 py-2.5 text-center hover:ease-in duration-300 hover:text-sm"
+        
+        let starCount = 0
+        try {
+            starCount = parseInt(info.volumeInfo["averageRating"], 10)
+        } catch (e) {
+            starCount = 0
+        }
+
+        if(starCount > 0) {
+            ratingStar.innerHTML = generateStar(starCount)
+        } else {
+            ratingStar.innerText = "- Unrated -"
+        }
+
         // Authors
         const author = document.createElement('p')
         author.id = "detailList"
@@ -77,7 +95,11 @@ function PrintDynamic(info) {
             tampilan.append(subheading)
         }
 
+        // gambar
         tampilan.append(divLapis1)
+
+        tampilan.append(ratingStar)
+
         if (author.innerText != "undefined") {
             tampilan.append(author)
         }
@@ -132,5 +154,46 @@ function deleteAllSearchResult() {
         GetData('https://www.googleapis.com/books/v1/volumes?q='+isiInput.value + '&&maxResults=25')
     })
 }
+
+
+function generateStar(activeStar) {
+    let starHTML = `<ul class="flex justify-center">`
+    for (let i = 0; i < activeStar; i++) {
+        starHTML += generateFullStar()
+    }
+    
+    if (activeStar < 5) {
+        for (let i = 0; i < 5 - activeStar; i++) {
+            starHTML +=generateEmptyStar()
+        }
+    }
+    
+    starHTML += `</ul>`
+
+    starHTML.replace(/\r?\n|\r/g, " ")
+    console.log(starHTML)
+    return (starHTML)
+}
+
+function generateFullStar() {
+    return (
+        `<li>
+            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="star" class="w-4 text-yellow-500 mr-1" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                <path fill="currentColor" d="M259.3 17.8L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0z"></path>
+            </svg>
+        </li>`
+    )
+}
+
+function generateEmptyStar() {
+    return (
+        `<li>
+            <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="star" class="w-4 text-yellow-500" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                <path fill="currentColor" d="M528.1 171.5L382 150.2 316.7 17.8c-11.7-23.6-45.6-23.9-57.4 0L194 150.2 47.9 171.5c-26.2 3.8-36.7 36.1-17.7 54.6l105.7 103-25 145.5c-4.5 26.3 23.2 46 46.4 33.7L288 439.6l130.7 68.7c23.2 12.2 50.9-7.4 46.4-33.7l-25-145.5 105.7-103c19-18.5 8.5-50.8-17.7-54.6zM388.6 312.3l23.7 138.4L288 385.4l-124.3 65.3 23.7-138.4-100.6-98 139-20.2 62.2-126 62.2 126 139 20.2-100.6 98z"></path>
+            </svg>
+        </li>`
+    )
+}
+
 
 export default BookDetails;
