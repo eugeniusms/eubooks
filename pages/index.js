@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div class="py-3 px-5 text-gray-700 bg-gray-50 border-gray-200 dark:bg-gray-800 dark:border-gray-700">
       <Head>
-            <title>Eubooks | Home</title>
+            <title>Eubooks | Landing</title>
             <meta name="keywords" content="book"/>  
       </Head>
       <link href="/dist/output.css" rel="stylesheet"></link>

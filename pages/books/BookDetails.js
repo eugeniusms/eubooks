@@ -1,34 +1,42 @@
 import GetData from "../../comps/GetData"
 
+// Fungsi ini mengambil data (berupa object dari API satu buku)
 const BookDetails = (data) => {
+    // Kemudian dicetak melalui fungsi PrintDynamic()
     PrintDynamic(data)
+    // Dan hapus juga search result (buku-buku halaman book search)
     deleteAllSearchResult()
 }
 
+// Fungsi ini digunakan untuk mencetak secara dinamis objek-objek dalam API buku
 function PrintDynamic(info) {
 
-    // just show only one
+    // Setiap pengambilan data -> info akan direset terlebih dahulu sehingga hanya
+    // satu buku saja yang akan diidentifikasi di dalam halaman
     const allDetails = document.querySelectorAll('#detailList')
     for (let list of allDetails) {
         list.remove()
     }
 
+    // Pembuatan object HTML dimulai untuk membentuk halaman, perlu menjadi catatan jika
+    // error maka yang terjadi adalah data berlipat, hal ini tidak perlu diperhatikan
     try {
+        // Mengambil query #tampilan di dalam halaman
         const tampilan = document.querySelector('#tampilan')
 
-        // Heading Title 
+        // Menyusun Heading Title 
         const heading = document.createElement('h2')
         heading.id = "detailList"
         heading.innerText = info.volumeInfo["title"]
         heading.className = "font-bold text-3xl text-center text-white"
         
-        // Heading Subtitle (bisa ada dan tidak (undefined))
+        // Menyusun Heading Subtitle (bisa ada dan tidak (undefined))
         const subheading = document.createElement('h3')
         subheading.id = "detailList"
         subheading.innerText = '"' + info.volumeInfo["subtitle"] + '"'
         subheading.className = "text-center text-white"
 
-        // Image
+        // Menyusun Image beserta komponen pengurungnya
         const image = document.createElement('img')
         image.id = "detailList"
         image.src = info.volumeInfo["imageLinks"].thumbnail
@@ -36,39 +44,40 @@ function PrintDynamic(info) {
         const divLapis1 = document.createElement('div')
         divLapis1.className = "flex justify-center p-8 rounded-3xl"
         divLapis1.id = "detailList"
-        // divlapis2
         const divLapis2 = document.createElement('div')
         divLapis2.className = "w-full bg-white rounded-3xl shadow border p-6 w-64 hover:ease-in duration-300 hover:scale-110"
         divLapis2.id = "detailList"
-        
+        // Memasukkan komponen menjadi satu bagian saja
         divLapis2.append(image)
         divLapis1.append(divLapis2)
 
-        // Star Rating
+        // Menyusun Star Rating
         const ratingStar = document.createElement('div')
         ratingStar.id = "detailList"
         ratingStar.className = "text-xs text-slate-400 font-medium rounded-lg px-5 py-2.5 text-center hover:ease-in duration-300 hover:text-sm"
-        
+        // Akan dihitung ratingnya ada berapa sesuai rating buku, jika rating error (undefined)
+        // Maka beri nilai 0 pada starCount
         let starCount = 0
         try {
             starCount = parseInt(info.volumeInfo["averageRating"], 10)
         } catch (e) {
             starCount = 0
         }
-
+        // Saat tidak nol maka ada bintang, generate bintang tersebut melalui generateStar()
+        // Saat nol berarti undefined -> cetak unrated
         if(starCount > 0) {
             ratingStar.innerHTML = generateStar(starCount)
         } else {
             ratingStar.innerText = "- Unrated -"
         }
 
-        // Authors
+        // Menyusun Authors
         const author = document.createElement('p')
         author.id = "detailList"
         author.innerText = "Author : " + info.volumeInfo["authors"]
         author.className = "text-center text-white"
 
-        // Description
+        // Menyusun Description
         const divDesc = document.createElement('div')
         divDesc.className = "box-content h-100 w-100 p-4 border-2 rounded-xl"
         divDesc.id = "detailList"
@@ -77,7 +86,7 @@ function PrintDynamic(info) {
         description.innerHTML = info.volumeInfo["description"]
         description.className = "text-center text-white antialiased"
 
-        // newLine
+        // Menyusun baris-baris yang akan digunakan dalam halaman
         const newLine0 = document.createElement('br')
         newLine0.id = "detailList"
         const newLine = document.createElement('br')
@@ -85,51 +94,51 @@ function PrintDynamic(info) {
         const newLine2 = document.createElement('br')
         newLine2.id = "detailList"
 
-        // append dan validasi 
-
+        // Memulai penambahan elemen ke halaman dan pengecekan error tidaknya
         tampilan.append(newLine0)
+        // Menambahkan heading
         tampilan.append(heading)
-
-        //saat undefined maka tidak akan diappend
+        // Menambahkan subheading, saat tak ada maka lewati penambahan object HTML
         if (subheading.innerText != '"undefined"') {
             tampilan.append(subheading)
         }
-
-        // gambar
+        // Menambahkan gambar, saat tak ada maka lewati penambahan object HTML
         tampilan.append(divLapis1)
-
+        // Menambahkan rating
         tampilan.append(ratingStar)
-
+        // Menambahkan authors, saat tak ada maka lewati penambahan object HTML
         if (author.innerText != "undefined") {
             tampilan.append(author)
         }
-
         tampilan.append(newLine2)
-
+        // Menambahkan description saat tak ada maka lewati penambahan object HTML
         if (description.innerText != "undefined") {
             divDesc.append(description)
             tampilan.append(divDesc)
         }
-
         tampilan.append(newLine)
     
     } catch (e) {
+        // Saat object tereplikasi beberapa kali
         console.log("ERROR")
     }
 }
 
+// Fungsi untuk menghapus semua elemen halaman book search
 function deleteAllSearchResult() {
+    // Hapus semua objek yang ada di dalam halaman book search
     const allSearchResult = document.querySelectorAll('#printList')
     for (let list of allSearchResult) {
         list.remove()
     }
 
-    // create new button for back
+    // Membuat tombol baru untuk kembali ke book search
     const backButton = document.createElement('button')
     backButton.id = "printList"
     backButton.innerText = "Back"
     backButton.className = "text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
     
+    // Ketika tombol back dipencet maka akan mereset bagian detailList -> buku API satu-satu
     setInterval(() => {
         backButton.addEventListener('click', function() {
             const detail = document.querySelectorAll("#detailList")
@@ -139,42 +148,53 @@ function deleteAllSearchResult() {
         })
     }, 1000)
 
+    // Inisiasi backDiv
     const backDiv = document.createElement('div')
     backDiv.id = "printList"
     backDiv.className = "flex justify-center"
 
+    // Mengambil query #searchBoook (isi form search)
     const isiInput = document.querySelector('#searchBook')
-
+    // Mengambil query #tampilan
     const getDiv = document.querySelector("#tampilan")
-
+    // Menambahkan tombol ke tampilan
     backDiv.append(backButton)
     getDiv.append(backDiv)
 
+    // Ketika tombol back diklik maka akan dikembalikan lagi data dari input search terakhir
     backButton.addEventListener('click', function() {
         GetData('https://www.googleapis.com/books/v1/volumes?q='+isiInput.value + '&&maxResults=25')
     })
 }
 
 
+// Fungsi untuk menggenerate banyaknya bintang dan susunannya
 function generateStar(activeStar) {
+    // Inisiasi div dari kumpulan bintang
     let starHTML = `<ul class="flex justify-center">`
+
+    // Untuk bintang yang aktif panggilkan generateFullStar()
     for (let i = 0; i < activeStar; i++) {
         starHTML += generateFullStar()
     }
-    
+
+    // Untuk bintang yang tidak aktif panggilkan generateEmptyStar()
     if (activeStar < 5) {
         for (let i = 0; i < 5 - activeStar; i++) {
             starHTML +=generateEmptyStar()
         }
     }
     
+    // Akhiri div
     starHTML += `</ul>`
-
+    // Melakukan regex replace newline
     starHTML.replace(/\r?\n|\r/g, " ")
-    console.log(starHTML)
+
+    // Mengembalikan susunan HTML yang telah terbentuk
     return (starHTML)
 }
 
+// Fungsi untuk mengembalikan HTML code bintang penuh
 function generateFullStar() {
     return (
         `<li>
@@ -185,6 +205,7 @@ function generateFullStar() {
     )
 }
 
+// Fungsi untuk mengembalikan HTML code bintang kosong
 function generateEmptyStar() {
     return (
         `<li>

@@ -1,37 +1,45 @@
+import Head from "next/head";
 import BookDetails from "./BookDetails";
 import Navbar from "../../comps/navbar";
 import Search from "../../comps/Search";
 
-const Details = ( url ) => {
+// Mengambil data (fetch data) dari url API yang diberikan oleh user melalui Details()
+const Details = ( url ) => {    
 
-    for (let i = 0; i < 10; i++) {
-        console.log(url)
-    }
-
+    // Melakukan fetch API
     fetch(url)
         .then(response => response.json())
         .then(data => {
-            // console.log(data["items"])
+            // Memasukkan object data API satu buku ke dalam info untuk dipanggil melalui 
+            // fungsi BookDetails yang terletakdi dalam ./BookDetails
             let info = data;
-            // console.log(books)
             BookDetails(info)
             })
 
 
     return (
+        // Inisiasi tampilan dari index HTML ini
         <>
-        <div class="border border-gray-200 dark:border-gray-700">
-                <Navbar />
-            <div class="py-3 px-5 text-gray-700 bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
-                <Search />
+            {/* Inisiasi head halaman */}
+            <Head>
+                <title>Eubooks | Books</title>
+                <meta name="keywords" content="book"/>  
+            </Head>
+
+            {/* Inisiasi navbar dan search untuk page ini */}
+            <div class="border border-gray-200 dark:border-gray-700">
+                    <Navbar />
+                <div class="py-3 px-5 text-gray-700 bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
+                    <Search />
+                </div>
             </div>
-        </div>
-        <div id="tampilan" class="py-3 px-5 text-gray-700 bg-gray-50 border-gray-200 dark:bg-gray-800 dark:border-gray-700">
-            {/* Isi Content */}
-        </div>
+
+            {/* Tampilan content akan ditampilkan dalam div id="tampilan" */}
+            <div id="tampilan" class="py-3 px-5 text-gray-700 bg-gray-50 border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+                {/* Isi Content */}
+            </div>
         </>
     )
 }
-
 
 export default Details;
