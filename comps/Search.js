@@ -30,21 +30,33 @@ const Search = () => {
                     {/* <div class="block">
                     <label for="search" class="inline-flex mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Search Book</label>
                     </div> */}
-                    <div class="container flex flex-wrap items-center">
-                        <div class="justify-between items-center w-full md:flex md:w-auto">
-                            <input type="text" id="searchBook" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 w-full" placeholder='"Kata Kunci"'/>
+                    <div class="flex justify-between">
+
+                        <div class="flex flex-wrap items-center">
+                            <div class="justify-between items-center w-full md:flex md:w-auto">
+                                <input type="text" id="searchBook" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 w-full" placeholder='"Kata Kunci"'/>
+                            </div>
+
+                            <div class="flex">
+                                <button id="searchButton" type="button" class="inline-flex text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center ml-1 mr-2 mb-0" onClick={tryAja}>
+                                    Search
+                                </button>
+                            </div>
                         </div>
 
-                        <div class="flex">
-                            <button id="searchButton" type="button" class="inline-flex text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center ml-1 mr-2 mb-0" onClick={tryAja}>
-                                Search
-                            </button>
+                        <div>
+                            <div class="flex">
+                                <button id="sortButton" type="button" class="inline-flex text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center ml-1 mr-2 mb-0" onClick={tryAja}>
+                                    Sort by rating
+                                </button>
+                            </div>
                         </div>
-                        
+                            
                     </div>
 
             <div id="meng">
             </div>
+            <br/>
 
         </>
     );
