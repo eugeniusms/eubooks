@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const Navbar = () => {
     return (
-        <nav class="flex justify-between sm:justify-start py-3 px-5 text-gray-700 bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
+        <nav class="flex justify-between py-3 px-5 text-gray-700 bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
             
             <div>
                 <p class="inline-flex text-3xl font-thin dark:text-white">Eubooks</p>

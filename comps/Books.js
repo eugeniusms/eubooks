@@ -58,7 +58,7 @@ function printHTML(data) {
 
             const fusion = document.createElement('div')
             fusion.id = "printList"
-            fusion.className = "p-8 rounded-3xl flex flex-wrap w-1/5"
+            fusion.className = "p-8 rounded-3xl flex flex-wrap md:w-1/5"
             fusion.src = data[i]["selfLink"]
 
             fusion.append(aHref)

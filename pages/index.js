@@ -122,41 +122,41 @@ export default function Home() {
         </button>
       </div>
 
-      {/* <section class="overflow-hidden text-gray-700 ">
+    <section class="overflow-hidden text-gray-700 ">
     <div class="container px-5 py-2 mx-auto lg:pt-2 lg:px-2">
       <div class="flex flex-wrap -m-1 md:-m-2">
-        <div class="flex flex-wrap w-1/5">
+        <div class="flex flex-wrap md:w-1/5">
           <div class="w-full p-1 md:p-2">
             <img alt="gallery" class="block m-auto object-cover object-center w-25px h-25px rounded-lg"
               src="http://books.google.com/books/content?id=HkBlDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api" />
           <p>Cek Aja Bagaimana Jika Tulisannya Panjang Ya</p>
           </div>
         </div>
-        <div class="flex flex-wrap w-1/5">
+        <div class="flex flex-wrap md:w-1/5">
           <div class="w-full p-1 md:p-2">
             <img alt="gallery" class="block object-cover object-center w-50px h-50px rounded-lg"
               src="http://books.google.com/books/content?id=HkBlDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api" />
           </div>
         </div>
-        <div class="flex flex-wrap w-1/5">
+        <div class="flex flex-wrap md:w-1/5">
           <div class="w-full p-1 md:p-2">
             <img alt="gallery" class="block object-cover object-center w-50px h-50px rounded-lg"
               src="http://books.google.com/books/content?id=HkBlDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api" />
           </div>
         </div>
-        <div class="flex flex-wrap w-1/5">
+        <div class="flex flex-wrap md:w-1/5">
           <div class="w-full p-1 md:p-2">
             <img alt="gallery" class="block object-cover object-center w-50px h-50px rounded-lg"
               src="http://books.google.com/books/content?id=HkBlDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api" />
           </div>
         </div>
-        <div class="flex flex-wrap w-1/5">
+        <div class="flex flex-wrap md:w-1/5">
           <div class="w-full p-1 md:p-2">
             <img alt="gallery" class="block object-cover object-center w-50px h-50px rounded-lg"
               src="http://books.google.com/books/content?id=HkBlDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api" />
           </div>
         </div>
-        <div class="flex flex-wrap w-1/5">
+        <div class="flex flex-wrap md:w-1/5">
           <div class="w-full p-1 md:p-2">
             <img alt="gallery" class="block object-cover object-center w-50px h-50px rounded-lg"
               src="http://books.google.com/books/content?id=HkBlDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api" />
@@ -166,6 +166,7 @@ export default function Home() {
     </div>
   </section>
 
+{/* 
       <div class="wrapper bg-gray-400 antialiased text-gray-900">
         <div>
             
@@ -281,7 +282,7 @@ export default function Home() {
                         </button>
                     </Link>
                 </div>
-            </div> */}
+            </div> */} 
 
     </div>
   );
