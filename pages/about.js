@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image';
+import Link from 'next/link';
 
 const About = () => {
     return (
@@ -32,11 +33,11 @@ const About = () => {
                         Help Me Improve This
                     </button>
                 </a>
-                <a href="/">
+                <Link href="/">
                     <button className="flex inline py-4 px-8 mr-2 mb-2 text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
                         Back
                     </button>
-                </a>
+                </Link>
             </div>
 
             <br/>

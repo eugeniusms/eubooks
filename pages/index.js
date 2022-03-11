@@ -38,18 +38,18 @@ export default function Home() {
 
           {/* Menyusun dua tombol utama */}
           <div className="flex justify-center">
-            <a href="/books">
+            <Link href="/books">
               {/* Tombol ini menuju ke program utama pencarian buku */}
               <button className="flex inline bg-blue-500 shadow-lg shadow-blue-500/50 text-white focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-8 py-4 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                   Get Started
               </button>
-            </a>
+            </Link>
             {/* Tombol ini menuju about page */}
-            <a href="/about">
+            <Link href="/about">
               <button className="flex inline py-4 px-8 mr-2 mb-2 text-sm font-medium text-gray-900 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">
                   Learn More
               </button>
-            </a>
+            </Link>
           </div>
 
           <br/>
