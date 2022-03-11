@@ -1,6 +1,6 @@
 import Head from "next/head";
 import BookDetails from "./BookDetails";
-import Navbar from "../../comps/navbar";
+import Navbar from "../../comps/Navbar";
 import Search from "../../comps/Search";
 
 // Mengambil data (fetch data) dari url API yang diberikan oleh user melalui Details()

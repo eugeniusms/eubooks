@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import Navbar from '../comps/navbar'
+import Navbar from '../comps/Navbar'
 import Footer from '../comps/Footer'
 
 export default function Home() {
@@ -109,6 +109,10 @@ setInterval(() => {
     quoteDiv.innerText = '"' + getQuote() + '"'
 
     // Quote akan ditampilkan dengan cara append ke indexPage
-    const indexPg = document.querySelector('#indexPage')
-    indexPg.append(quoteDiv)
+    try {
+      const indexPg = document.querySelector('#indexPage')
+      indexPg.append(quoteDiv)
+    } catch (e) {
+      // if error continue just memastikan indexPg ada
+    }
 }, 3141) // Berubah setiap 3141 ms | Funfact I choose this because (3.141 -> pi number)
