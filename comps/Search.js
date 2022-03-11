@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import GetData from './GetData';
+import Books from './Books';
 
 const Search = () => {
 
@@ -69,7 +70,52 @@ function searchBro() {
 }
 
 function sortingBro() {
+    let allObj = []
+    const getAllBooksOnDisplay = document.querySelectorAll('p')
+    for (let p of getAllBooksOnDisplay) {
+        if (p.src == "buku") {
+            const newObj = {
+                
+                "volumeInfo": {
+                    "title": p.innerText.slice(1, p.innerText.length - 1),
+                    "averageRating": p.rating,
+                    "imageLinks": {
+                        "thumbnail": p.image
+                    }
+                },
+                "selfLink": p.link
+            }
+            allObj.push(newObj)
+        }
+    }
+    sortTheArray(allObj)
+    console.log(allObj)
+}
 
+function sortTheArray(array) {
+    // bubble sort terurut kecil -> besar
+    for (let i = 0; i < array.length; i++) {
+        for (let j = 0; j < array.length; j++) {
+            // skip if same
+            if (i == j) {
+                continue
+            }
+            // operate swap
+            let rateA = array[i].volumeInfo["averageRating"]
+            let rateB = array[j].volumeInfo["averageRating"]
+            if (rateB == undefined) {
+                continue
+            } else if ((rateA == undefined) || (rateB >= rateA)) {
+                let objTmp = array[i]
+                array[i] = array[j]
+                array[j] = objTmp
+            }
+        }
+    }
+    // besar -> kecil
+    array.reverse()
+    console.log(array)
+    Books(array)
 }
 
 // Set Default Page

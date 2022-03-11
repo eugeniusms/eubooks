@@ -41,7 +41,15 @@ function printHTML(data) {
             newList.id = "printList"
             newList.innerText = '"' + data[i].volumeInfo["title"] + '"'
             newList.className = "text-white py-8 font-mono mt-1 font-thin capitalize leading-tight text-center"
+            // send to sorting (src -> validation) (title, rating, image, link)
+            newList.src = "buku"
+            newList.rating = data[i].volumeInfo["averageRating"]
+            newList.image = data[i].volumeInfo["imageLinks"].thumbnail
+            newList.link = data[i]["selfLink"]
+            
             const aHref = document.createElement('a')
+
+
             // aHref.href = '/books/' + newList.innerText
 
             // rating
