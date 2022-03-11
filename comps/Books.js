@@ -23,12 +23,12 @@ function printHTML(data) {
             divHref.id = "printList"
             divHref.class = data[i]["selfLink"]
             const divLapis2 = document.createElement('div')
-            divLapis2.className = "w-full bg-white rounded-3xl shadow border p-6 w-64 hover:ease-in duration-300 hover:scale-110"
+            divLapis2.className = "w-full bg-white rounded-3xl shadow border p-6 w-64 hover:ease-in duration-300 hover:bg-slate-400"
             divLapis2.id = "printList"
             // gambar
             const imageBook = document.createElement('img')
             imageBook.alt = "gallery"
-            imageBook.className = "block m-auto object-cover object-center w-30px h-30px rounded-lg hover:ease-in duration-300 hover:scale-110 hover:rotate-6"
+            imageBook.className = "block m-auto object-cover object-center w-30px h-30px rounded-lg hover:ease-in duration-300 hover:scale-110 hover:rotate-6 hover:-translate-y-6 hover:translate-x-6"
             imageBook.id = "printList"
             imageBook.src = data[i].volumeInfo["imageLinks"].thumbnail
             // judul

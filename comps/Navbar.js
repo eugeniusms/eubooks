@@ -6,7 +6,7 @@ const Navbar = () => {
         <nav class="flex justify-between py-3 px-5 text-gray-700 bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
             
             <div>
-                <p class="inline-flex text-3xl font-thin dark:text-white">Eubooks</p>
+                <p class="inline-flex text-3xl dark:text-white">Eubooks</p>
                 <Image src="/logo.png" class="inline-flex hover:ease-in duration-300 hover:rotate-45" width={40} height={40}/>
             </div>
 

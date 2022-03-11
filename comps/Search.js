@@ -38,7 +38,7 @@ const Search = () => {
                             </div>
 
                             <div class="flex">
-                                <button id="searchButton" type="button" class="inline-flex text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center ml-1 mr-2 mb-0" onClick={tryAja}>
+                                <button id="searchButton" type="button" class="inline-flex text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center ml-1 mr-2 mb-0" onClick={searchBro}>
                                     Search
                                 </button>
                             </div>
@@ -46,39 +46,30 @@ const Search = () => {
 
                         <div>
                             <div class="flex">
-                                <button id="sortButton" type="button" class="inline-flex text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center ml-1 mr-2 mb-0" onClick={tryAja}>
-                                    Sort by rating
+                                <button id="sortButton" type="button" class="inline-flex text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center ml-1 mr-2 mb-0 hover:ease-in duration-300 hover:scale-110" onClick={sortingBro}>
+                                    Sort By Rating
                                 </button>
                             </div>
                         </div>
                             
                     </div>
 
-            <div id="meng">
-            </div>
             <br/>
 
         </>
     );
 }
  
-function tryAja() {
+function searchBro() {
     console.log("SUCCESS")
 
     const isiInput = document.querySelector('#searchBook')
 
-    const linkNi = document.createElement('a')
-    linkNi.href = 'https://www.googleapis.com/books/v1/volumes?q=' + isiInput.value
-
-    const coba = document.createElement('p')
-    coba.innerText = 'https://www.googleapis.com/books/v1/volumes?q=' + isiInput.value
-
-    const all = document.querySelector('#meng')
-    
-    linkNi.append(coba)
-    // all.append(linkNi)
-
     GetData('https://www.googleapis.com/books/v1/volumes?q='+isiInput.value + '&&maxResults=25')
+}
+
+function sortingBro() {
+
 }
 
 // Set Default Page

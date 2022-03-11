@@ -93,6 +93,19 @@ export default function Home() {
       COU
     </div>
 
+    <p class="inline-flex text-3xl dark:text-white">Eubooks</p>
+
+
+    <div class="block m-auto object-cover object-center w-30px h-30px rounded-lg hover:ease-in duration-300 hover:scale-110 hover:rotate-6 hover:skew-y-6 hover:translate-x-6">
+      COBA SKEW
+    </div>
+
+    <div class="w-full bg-white rounded-3xl shadow border p-6 w-64 hover:ease-in duration-300 hover:bg-slate-400">
+     SEPERTI KACA
+    </div>
+
+    <button id="sortButton" type="button" class="inline-flex text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:ease-in duration-300 hover:scale-110"></button>
+    
 
     <div class="bg-gradient-to-r from-indigo-500 via-black via-black to-indigo-500">
       AYOAYO</div>
