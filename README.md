@@ -2,6 +2,7 @@ This is a [Next.js](https://nextjs.org/) project
 
 ## Display
 
+Click the image below to go to YouTube
 [![Ebooks App Screenrecord](https://img.youtube.com/vi/Q8oqlaLcpV0/0.jpg)](https://www.youtube.com/watch?v=Q8oqlaLcpV0)
 
 <br/>
@@ -17,6 +18,13 @@ npm run dev
 # or
 yarn dev
 ```
+
+## Parameter
+
+- Home        : http://localhost:3000/ 
+- Login       : http://localhost:3000/login
+- Book Search : http://localhost:3000/books
+- About       : http://localhost:3000/about 
 
 Open http://localhost:3000 with your browser to see the project
 
