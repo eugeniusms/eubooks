@@ -23,7 +23,7 @@ function printHTML(data) {
             // Menyusun link menuju fetch per buku dengan divHref
             const divHref = document.createElement('div')
             divHref.id = "printList"
-            divHref.className = data[i]["selfLink"]
+            divHref.class = data[i]["selfLink"]
             const divLapis2 = document.createElement('div')
             divLapis2.className = "w-full bg-white rounded-3xl shadow border p-6 w-64 hover:ease-in duration-300 hover:bg-slate-400"
             divLapis2.id = "printList"
@@ -39,7 +39,7 @@ function printHTML(data) {
             const buttonTitle = document.createElement('button')
             buttonTitle.id = "printList"
             buttonTitle.className = "text-xs hover:text-white font-medium rounded-lg px-5 py-2.5 text-center hover:ease-in duration-300 hover:text-sm"
-            buttonTitle.className = data[i]["selfLink"]
+            buttonTitle.class = data[i]["selfLink"]
             // Menyusun isi judul buku dan stylenya
             const newList = document.createElement('p')
             newList.id = "printList"
@@ -162,7 +162,7 @@ setInterval(() => {
                 const tampilanDiv = document.createElement('div')
                 tampilanDiv.id = "tampilan"
                 // Mengambil fetch data dengan Details()
-                Details(this.className)
+                Details(this.class)
             })
         }
     }

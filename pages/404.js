@@ -17,7 +17,7 @@ const NotFound = () => {
 
     return (
         // Tampilan dari halaman error 404
-        <div className="py-3 px-5 text-gray-700 bg-gray-50 border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+        <div class="py-3 px-5 text-gray-700 bg-gray-50 border-gray-200 dark:bg-gray-800 dark:border-gray-700">
             
             {/* Inisiasi head halaman */}
             <Head>
@@ -28,16 +28,16 @@ const NotFound = () => {
             <br/><br/><br/><br/><br/>
         
             {/* Menampilkan tulisan untuk dibaca oleh user saat error */}
-            <p className="text-center text-4xl text-white font-bold">Oops...</p>
-            <p className="text-center text-2xl text-slate-400">This page was not found, <br/> 
+            <p class="text-center text-4xl text-white font-bold">Oops...</p>
+            <p class="text-center text-2xl text-slate-400">This page was not found, <br/> 
             but you can stay and have a drink.
             </p>
 
             <br/>
 
             {/* Menampilkan gambar beer.jpg untuk dilihat user */}
-            <div className="flex justify-center">
-            <Image src="/beer.jpg" className="block opacity-30 hover:ease-in duration-300 hover:opacity-50" width={600} height={300}/>
+            <div class="flex justify-center">
+            <Image src="/beer.jpg" class="block opacity-30 hover:ease-in duration-300 hover:opacity-50" width={600} height={300}/>
             </div>
 
             <br/><br/> <br/><br/><br/>
